@@ -6,40 +6,35 @@
 
 body, html {
     height: 100%;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
 }
 
 .body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; /* Выравнивание сверху */
+    align-items: center; /* Центрирование по горизонтали */
     padding: 20px;
+    min-height: 100vh; /* Чтобы страница занимала весь экран */
+    background-color: #f4f4f4; /* Легкий фон для контраста */
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-}
-
-.text {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    color: black;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Ограничение ширины */
+    margin: 0 auto; /* Центрирование по горизонтали */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .header {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     width: 100%;
     position: relative;
@@ -52,13 +47,17 @@ body, html {
 }
 
 .text-title {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
+    text-align: center;
+    flex-grow: 1; /* Расширяет текст в центре */
 }
 
 .text-description {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .hr {
@@ -66,12 +65,15 @@ body, html {
     height: 1px;
     border: 0;
     width: 100%;
+    margin-top: 20px;
 }
 
 .day-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
     width: 100%;
+    margin-top: 20px;
 }
 
 .day-card {
@@ -79,10 +81,11 @@ body, html {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    text-align: center;
 }
 
 .text-day-name {
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -98,21 +101,19 @@ body, html {
     cursor: pointer;
 }
 
-.text-day-full-name {
-    font-size: 16px;
-    font-weight: 500;
+.selected {
+    background-color: rgba(96, 215, 253, 0.75);
 }
 
 .day-today {
     border: 1px solid #16A9D8;
 }
 
-.selected {
-    background-color: rgba(96, 215, 253, 0.75);
-}
-
-.day-holiday {
-    color: rgba(0, 0, 0, 0.5);
+.text-day-full-name {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .time-grid {
@@ -120,10 +121,12 @@ body, html {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     width: 100%;
+    margin-top: 20px;
 }
 
 .time-card {
-    width: 86px;
+    width: 100%;
+    max-width: 90px; /* Ограничение ширины для времени */
     height: 36px;
     border-radius: 15px;
     display: flex;
@@ -131,6 +134,7 @@ body, html {
     align-items: center;
     border: 1px solid #D9D9D9;
     cursor: pointer;
+    margin: 0 auto; /* Центрирование карточек по горизонтали */
 }
 
 .time-card-title {
@@ -142,10 +146,12 @@ body, html {
     background-color: #1C2A3A;
     height: 49px;
     width: 100%;
+    max-width: 300px; /* Ограничение ширины кнопки */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 24px;
+    margin: 20px auto; /* Центрирование по горизонтали */
 }
 
 .button-text {
@@ -153,3 +159,4 @@ body, html {
     font-size: 15px;
     font-weight: 600;
 }
+
